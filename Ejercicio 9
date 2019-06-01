@@ -1,0 +1,53 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int invertir(int num)
+{
+	int cifra1,cifra2,cifra3;
+	int invertido;
+	if (num >= 0 && num <= 9)
+	{
+		invertido = num;
+	}
+	if (num >= 10 && num <= 99)
+	{
+		cifra1 = (num % 10) * 10;
+		cifra2 = num / 10;
+		invertido = cifra1 + cifra2;
+	}
+	if (num >= 100 && num <= 199)
+	{
+		cifra1 = (num % 10) * 100;
+		cifra2 = ((num % 100) / 10) * 10;
+		cifra3 = num / 100;
+		invertido = cifra1 + cifra2 + cifra3;
+	}
+	return invertido;
+}
+void imprimir(int numer)
+{
+	cout << " Hay " << numer << " numeros capicuas";
+}
+int main()
+{
+	int *num;
+	int invertido, numer = 0;
+	num = new int[10];
+	for (int x = 0; x < 10; x++)
+	{
+		do {
+			cout << " Datos del vector " << x + 1 << " : ";
+			cin >> num[x];
+		} while (num < 0 || num[x] >= 200);
+
+		invertido = invertir(num[x]);
+		if (num[x] == invertido)
+		{
+			numer++;
+		}
+	}cout << endl;
+	imprimir(numer);
+	_getch();
+}
