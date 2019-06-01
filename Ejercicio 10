@@ -1,0 +1,38 @@
+#include <iostream>
+#include <conio.h>
+#include <time.h>
+#include <Windows.h>
+using namespace std;
+using namespace System;
+void divisible3(int vector)
+{
+	if (vector % 3 == 0) 
+	{
+		cout << vector << " es divisible por 3" << endl; 
+		cout << " porque " << vector % 10 << " + " << vector / 10 << " es divisible por 3" << endl;
+	}
+	if (vector % 3 != 0) { cout << vector << " es no divisible por 3" << endl; }
+}
+int main()
+{
+	int vector[10], valor;
+	cout << "Ingrese valores menores a 200:" << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		do
+		{
+			cout << "valor " << i + 1 << ":"; cin >> valor;
+
+		} while (valor>=200);
+			vector[i] = valor;
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << vector[i] << " - ";
+		divisible3(vector[i]);
+	}
+
+
+	_getch();
+}
