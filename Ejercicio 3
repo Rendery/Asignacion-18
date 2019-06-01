@@ -1,0 +1,88 @@
+#include "stdafx.h"
+
+#include <iostream>
+
+#include <conio.h>
+
+#include <time.h>
+
+#include <Windows.h>
+
+using namespace std;
+
+using namespace System;
+
+
+int main()
+{
+
+	int N;
+	
+        int *edad = new int[10];
+	
+        float mayor, menor;
+	
+        int contador = 0;
+
+	
+   do
+	{
+		
+   cout << "Ingresar el valor de N: ";
+		
+  cin >> N;
+	
+   } while (N <= 0 || N>100);
+
+	
+   for (int i = 0; i < N; i++)
+	{
+	
+	edad[i] = Random::Random().Next(0, 20);
+		
+      Sleep(20);
+
+		
+    if (edad[i]>mayor)
+		
+          {
+			mayor = edad[i];
+		
+}
+		else
+		{
+			
+                       if (edad[i]< menor)
+		
+                	{
+			
+            	menor = edad[i];
+			
+}
+		}
+
+	
+}
+
+	for (int i = N + 1; i < N; i++)
+	
+{
+		if (i % 1 == 0)
+		
+{
+			contador = contador + 1;
+		
+}
+	}
+
+	for (int i = 0; i < N; i++)
+	
+{
+		cout << i << "-> " << edad[i] << endl;
+	
+}
+	cout << "El numero de personas que tienen entre 30 y 50 es :" << contador << endl;
+
+	system("pause");
+
+}
