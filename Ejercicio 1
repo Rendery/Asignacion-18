@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include<iostream>
+#include<conio.h>
+using namespace std;
+using namespace System;
+
+int main()
+{
+	int notas[10];
+	int n;
+	float menor = 20, suma = 0;
+	float promedio;
+
+	cout << "Ingrese la cantidad de notas: ";
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Digite la calificacion " << i + 1 << ".  ";
+		cin >> notas[i];
+
+		if (notas[i] < menor)
+		{
+			menor = notas[i];
+		}
+		suma += notas[i];
+	}
+	cout << " el menor es: " << menor << endl;
+	promedio = (suma - menor) / 5;
+	cout << " El promedio es : " << promedio;
+	getch();
+	return 0;
+}
